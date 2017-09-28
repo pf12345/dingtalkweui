@@ -2,7 +2,8 @@ import 'weui';
 import Alert from './components/alert';
 import Confirm from './components/confirm';
 import Loading from './components/loading';
-import Actionsheet from './components/actionsheet'
+import Actionsheet from './components/actionsheet';
+import Modal from './components/modal';
 import {getPlatform} from './utils/dom';
 
 const dingtalkweui = {
@@ -27,6 +28,7 @@ const install = function (Vue, opts = {}) {
     Vue.prototype.$confirm = Confirm;
     Vue.prototype.$loading = Loading;
     Vue.prototype.$actionsheet = Actionsheet;
+    Vue.prototype.$modal = Modal;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
