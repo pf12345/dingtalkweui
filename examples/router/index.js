@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Alert from '@/components/alert'
 import Confirm from '@/components/confirm'
+import Loading from '@/components/loading'
+import Actionsheet from '@/components/actionsheet'
 
 Vue.use(Router)
 
@@ -22,6 +24,16 @@ export default new Router({
     	path: '/confirm',
     	name: 'Confirm',
     	component: Confirm
+    },
+    {
+      path: '/loading',
+      name: 'Loading',
+      component: Loading
+    },
+    {
+      path: '/actionsheet',
+      name: 'Actionsheet',
+      component: Actionsheet
     }
   ]
 })

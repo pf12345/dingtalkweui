@@ -6,7 +6,7 @@ import router from './router';
 import dingtalkweui from '../src/index';
 
 Vue.use(dingtalkweui, {
-	platform: 'weixin'
+	platform: 'dingding'
 });
 
 Vue.config.productionTip = false;

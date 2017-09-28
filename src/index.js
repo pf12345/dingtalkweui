@@ -1,7 +1,9 @@
 import 'weui';
 import Alert from './components/alert';
 import Confirm from './components/confirm';
-import {addSDK} from './utils/dom';
+import Loading from './components/loading';
+import Actionsheet from './components/actionsheet'
+import {getPlatform} from './utils/dom';
 
 const dingtalkweui = {
 	
@@ -12,15 +14,19 @@ const install = function (Vue, opts = {}) {
 	Object.keys(opts).forEach((key) => {
 		Vue.prototype[key] = opts[key];
 	})
-	if(opts.platform) {
-		Vue.prototype.platform = addSDK(opts.platform);
+	
+	if(getPlatform()) {
+		Vue.prototype.platform = getPlatform();
 	}
+
     Object.keys(dingtalkweui).forEach((key) => {
         Vue.component(key, dingtalkweui[key]);
     });
 
     Vue.prototype.$alert = Alert;
     Vue.prototype.$confirm = Confirm;
+    Vue.prototype.$loading = Loading;
+    Vue.prototype.$actionsheet = Actionsheet;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
