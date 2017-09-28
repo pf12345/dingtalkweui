@@ -14,5 +14,8 @@ module.exports = {
     source: 'src',
     img: 'src',
     image: 'xlink:href'
+  },
+  postLoaders: {
+    html: 'babel-loader'
   }
 }
