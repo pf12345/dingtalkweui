@@ -4,6 +4,7 @@ var isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   loaders: utils.cssLoaders({
+    js: 'babel-loader!eslint-loader',
     sourceMap: isProduction
       ? config.build.productionSourceMap
       : config.dev.cssSourceMap,
@@ -15,7 +16,4 @@ module.exports = {
     img: 'src',
     image: 'xlink:href'
   },
-  postLoaders: {
-    html: 'babel-loader'
-  }
 }

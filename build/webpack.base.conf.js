@@ -37,7 +37,7 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('examples')],
         options: {
-          'presets': ['es2015'],
+          'presets': ['latest'],
         }
       },
       {
