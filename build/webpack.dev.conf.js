@@ -1,35 +1,43 @@
-var utils = require('./utils')
-var webpack = require('webpack')
-var config = require('../config')
-var merge = require('webpack-merge')
-var baseWebpackConfig = require('./webpack.base.conf')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+/**
+ * 本地预览
+ */
 
-// add hot-reload related code to entry chunks
-Object.keys(baseWebpackConfig.entry).forEach(function (name) {
-  baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-})
+var path = require('path');
+var webpack = require('webpack');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var merge = require('webpack-merge');
+var webpackBaseConfig = require('./webpack.base.conf.js');
+var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
-module.exports = merge(baseWebpackConfig, {
-  module: {
-    rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
-  },
-  // cheap-module-eval-source-map is faster for development
-  devtool: '#cheap-module-eval-source-map',
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env': config.dev.env
-    }),
-    // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    }),
-    new FriendlyErrorsPlugin()
-  ]
-})
+
+module.exports = merge(webpackBaseConfig, {
+    // 入口
+    entry: {
+        main: './examples/main',
+        vendors: ['vue', 'vue-router']
+    },
+    // 输出
+    output: {
+        path: path.join(__dirname, '../examples/dist'),
+        publicPath: '',
+        filename: '[name].js',
+        chunkFilename: '[name].chunk.js'
+    },
+    resolve: {
+        alias: {
+            dingtalkweui: '../../src/index',
+            vue: 'vue/dist/vue.esm.js'
+            // vue: 'vue/dist/vue.runtime.js'
+        }
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({ name: 'vendors', filename: 'vendor.bundle.js' }),
+        new HtmlWebpackPlugin({
+            inject: true,
+            filename: path.join(__dirname, '../examples/dist/index.html'),
+            template: path.join(__dirname, '../examples/index.html')
+        }),
+        new FriendlyErrorsPlugin()
+    ]
+});

@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import Alert from '@/components/alert'
-import Confirm from '@/components/confirm'
-import Loading from '@/components/loading'
-import Actionsheet from '@/components/actionsheet'
-import Modal from '@/components/modal'
+import Hello from './../components/Hello.vue'
+import Alert from './../components/alert.vue'
+import Confirm from './../components/confirm.vue'
+import Loading from './../components/loading.vue'
+import Actionsheet from './../components/actionsheet.vue'
+import Modal from './../components/modal.vue'
 
 Vue.use(Router)
 
