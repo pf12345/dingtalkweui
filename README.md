@@ -18,9 +18,13 @@ import dingtalkweui from 'dingtalkweui'
 
 
 // config = { platform: 'dingding' }
-// platform can use 'dingding', 'weixin', 'normal'
-// config可不传，Vue.use(dingtalkweui); 
+// platform can use 'dingding', 'weixin', 'normal' 
+
 Vue.use(dingtalkweui, config); 
+
+// config可不传
+
+Vue.use(dingtalkweui);
 
 ```
 
