@@ -28,6 +28,24 @@ Vue.use(dingtalkweui);
 
 ```
 
+## 开发
+
+安装
+
+```
+git clone https://github.com/pf12345/dingtalkweui.git
+cd dingtalkweui
+npm install
+npm run dev
+
+```
+
+编译
+
+```
+npm run dist
+```
+
 ## Build Setup
 
 ``` bash
