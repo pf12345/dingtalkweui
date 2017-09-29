@@ -46,26 +46,19 @@ npm run dev
 npm run dist
 ```
 
-## Build Setup
+# 文档
 
-``` bash
-# install dependencies
-npm install
+[Documents](https://pf12345.gitbooks.io/dingtalkweui-api/content/)
 
-# serve with hot reload at localhost:8080
-npm run dev
 
-# build for production with minification
-npm run build
+# 贡献
 
-# build for production and view the bundle analyzer report
-npm run build --report
+如果你有好的意见或建议，欢迎给我们提issue或pull request。
 
-# run unit tests
-npm run unit
 
-# run all tests
-npm test
-```
+# License
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+The MIT License(http://opensource.org/licenses/MIT)
+
+请自由地享受和参与开源
+
