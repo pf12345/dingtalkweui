@@ -2,6 +2,33 @@
 
 > 钉钉平台及微信平台及普通手机访问平台vue组件库
 
+## Install
+
+install dingtalkweui through npm
+
+```
+npm install dingtalkweui --save
+```
+
+user in project
+
+```
+import Vue from 'vue'
+import dingtalkweui from 'dingtalkweui'
+
+
+// config = { platform: 'dingding' }
+// platform can use 'dingding', 'weixin', 'normal'
+
+Vue.use(dingtalkweui, config); 
+
+or 
+
+Vue.use(dingtalkweui); 
+
+
+```
+
 ## Build Setup
 
 ``` bash
