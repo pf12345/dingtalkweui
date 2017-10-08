@@ -10,7 +10,7 @@ const defaulButtons = [{
 	onClick: function(){}
 }]
 export default {
-	show({content = '提示信息', title = '提示', buttons = defaulButtons, success = function() {}}) {
+	show({content = '提示信息', title = '提示', buttons = defaulButtons}) {
 		if(Vue.prototype.platform === 'dingtalk' && window.dd) {
 			let _buttons = [];
 			if(buttons && buttons.length) {
@@ -35,9 +35,9 @@ export default {
 				});
 			})
 		} else if(window.weui) {
-			return weui.alert(content, {
-				title: title,
-				buttons: buttons
+			return weui.confirm(content, {
+			    title: title,
+			    buttons: defaulButtons
 			});
 		}
 	}

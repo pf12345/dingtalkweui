@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Alert',
+  name: 'Confirm',
   data () {
     return {
       
@@ -14,7 +14,7 @@ export default {
   },
   mounted() {
     this.$confirm.show({
-      content: 'this is alert test',
+      content: 'this is Confirm test',
       title: 'this is title',
       buttons: [{
         label: '确认',

@@ -11,7 +11,7 @@ actionsheet 弹出式菜单
             <p>Dingtalk ActionSheet</p>
         </td>
         <td>
-            <img alt="Dingtalk ActionSheet" src="./images/actionsheet_weui.jpeg" width=200 />
+            <img alt="Weui ActionSheet" src="./images/actionsheet_weui.jpeg" width=200 />
             <p>Weui ActionSheet</p>
         </td>
     </tr>
