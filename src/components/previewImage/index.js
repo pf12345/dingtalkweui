@@ -27,6 +27,10 @@ export default {
 					_this.hide();
 			    }
 			});
+
+			if(gallery && success && typeof success === 'function') {
+				success();
+			}
 		}
 	},
 	hide(cb) {

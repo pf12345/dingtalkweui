@@ -9,6 +9,7 @@
 - [alert](docs/alert.md)
 - [confirm](docs/confirm.md)
 - [loading](docs/loading.md)
+- [preview image](docs/previewImage.md)
 
 ## Install
 

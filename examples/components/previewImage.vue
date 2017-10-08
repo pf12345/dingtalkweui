@@ -22,6 +22,12 @@ export default {
         alert('delete button')
       }
     });
+
+    setTimeout(() => {
+      this.$previewImage.hide(() => {
+        alert('Hide image')
+      })
+    }, 4000);
   }
 }
 </script>
