@@ -13,9 +13,13 @@ export default {
     }
   },
   mounted() {
-    this.$loading.show();
+    this.$loading.show('loading', function() {
+      alert('start loading');
+    });
     setTimeout(() => {
-      this.$loading.hide();
+      this.$loading.hide(function() {
+      alert('end loading');
+    });
     }, 3000)
   }
 }

@@ -20,6 +20,9 @@ export default {
 			loading = weui.loading(content, {
 				className: 'custom-classname'
 			});
+			if(success && typeof success === 'function') {
+				success();
+			}
 		}
 	},
 	hide(success) {
