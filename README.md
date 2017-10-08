@@ -50,10 +50,13 @@ npm run dev
 npm run dist
 ```
 
-### 文档
+<!-- ### 文档
 
-<a href="https://pf12345.gitbooks.io/dingtalkweui-api/content/" target="_blank">Documents</a>
+<a href="https://pf12345.gitbooks.io/dingtalkweui-api/content/" target="_blank">Documents</a> -->
 
+### Docs
+
+- [alert](docs/alert.md)
 
 ### 贡献
 
