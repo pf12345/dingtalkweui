@@ -4,16 +4,18 @@
 alert 警告弹框，功能类似于浏览器自带的 alert 弹框，用于提醒、警告用户简单扼要的信息，只有一个“确认”按钮，点击“确认”按钮后关闭弹框。
 
 **Example Image** 
-<div style="text-align: center;">
-	<div style="display: inline-block;width: 200px;">
-	<img alt="Dingtalk Alert" src="./images/alert_dingtalk.jpeg" width=200 />
-<p style="text-align: center;">Dingtalk Alert</p>
-	</div>
-	<div style="display: inline-block;width: 200px;margin-left: 20px;">
-	<img alt="Dingtalk Alert" src="./images/alert_weui.jpeg" width=200 />
-<p style="text-align: center;">Weui Alert</p>
-	</div>
-</div>
+<table border="0">
+    <tr>
+        <td>
+            <img alt="Dingtalk Alert" src="./images/alert_dingtalk.jpeg" width=200 />
+            <p>Dingtalk Alert</p>
+        </td>
+        <td>
+            <img alt="Dingtalk Alert" src="./images/alert_weui.jpeg" width=200 />
+            <p>Weui Alert</p>
+        </td>
+    </tr>
+</table>
 
 
 **Kind**: global function  
