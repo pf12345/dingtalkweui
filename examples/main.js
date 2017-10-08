@@ -3,7 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import dingtalkweui from '../dist/dingtalkweui.js';
+import dingtalkweui from '../src/index';
 
 Vue.use(dingtalkweui, {
 	platform: 'dingding'

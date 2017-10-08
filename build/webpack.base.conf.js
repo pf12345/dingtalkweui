@@ -20,6 +20,8 @@ module.exports = {
                         css: 'vue-style-loader!css-loader',
                         less: 'vue-style-loader!css-loader!less-loader'
                     },
+                    presets: ["latest", "stage-3"],
+                    plugins: ["transform-runtime"],
                     postLoaders: {
                         html: 'babel-loader'
                     }
@@ -27,7 +29,12 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader', exclude: /node_modules/
+                loader: 'babel-loader', exclude: /node_modules/,
+                options: {
+                    presets: ["latest", "stage-3"],
+                    plugins: ["transform-runtime"],
+                }
+
             },
             {
                 test: /\.css$/,

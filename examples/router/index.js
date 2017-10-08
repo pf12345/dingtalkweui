@@ -6,6 +6,7 @@ import Confirm from './../components/confirm.vue'
 import Loading from './../components/loading.vue'
 import Actionsheet from './../components/actionsheet.vue'
 import Modal from './../components/modal.vue'
+import PreviewImage from './../components/previewImage.vue'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/modal',
       name: 'Modal',
       component: Modal
+    },
+    {
+      path: '/previewImage',
+      name: 'PreviewImage',
+      component: PreviewImage
     }
   ]
 })
