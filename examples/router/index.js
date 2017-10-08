@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from './../components/Hello.vue'
+import Index from './../components/index.vue'
 import Alert from './../components/alert.vue'
 import Confirm from './../components/confirm.vue'
 import Loading from './../components/loading.vue'
@@ -14,8 +14,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Index',
+      component: Index
     },
     {
     	path: '/alert',
