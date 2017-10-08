@@ -62,7 +62,7 @@ npm run dist
 
 ### License
 
-<a href="http://opensource.org/licenses/MIT" target="_blank">The MIT License</a>
+The MIT License(http://opensource.org/licenses/MIT)
 
 请自由地享受和参与开源
 
