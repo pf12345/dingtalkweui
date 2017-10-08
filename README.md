@@ -52,7 +52,7 @@ npm run dist
 
 ### 文档
 
-[Documents](https://pf12345.gitbooks.io/dingtalkweui-api/content/){:target="_blank"}
+<a href="https://pf12345.gitbooks.io/dingtalkweui-api/content/" target="_blank">Documents</a>
 
 
 ### 贡献
@@ -62,7 +62,7 @@ npm run dist
 
 ### License
 
-The MIT License(http://opensource.org/licenses/MIT){:target="_blank"}
+<a href="http://opensource.org/licenses/MIT" target="_blank">The MIT License</a>
 
 请自由地享受和参与开源
 
