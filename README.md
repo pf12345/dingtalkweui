@@ -56,6 +56,7 @@ npm run dist
 
 ### Docs
 
+- [actionsheet](docs/actionsheet.md)
 - [alert](docs/alert.md)
 
 ### 贡献
