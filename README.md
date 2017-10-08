@@ -31,21 +31,21 @@ add script tag
 
 ```
 
-user in project
+use in project
 
 ```
 import Vue from 'vue'
 import dingtalkweui from 'dingtalkweui'
 
+Vue.use(dingtalkweui);
+
 
 // config = { platform: 'dingding' }
 // platform can use 'dingding', 'weixin', 'normal' 
 
-Vue.use(dingtalkweui, config); 
+或者 Vue.use(dingtalkweui, config); 
 
-// config可不传
 
-Vue.use(dingtalkweui);
 
 ```
 
