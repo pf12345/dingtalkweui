@@ -2,6 +2,12 @@
 
 > 钉钉平台、微信平台及普通手机访问平台开发的vue组件库, 能够更快、更方便的调用钉钉sdk、微信sdk及进行普通手机页面开发；
 
+
+### Docs
+
+- [actionsheet](docs/actionsheet.md)
+- [alert](docs/alert.md)
+
 ## Install
 
 install dingtalkweui through npm
@@ -54,10 +60,6 @@ npm run dist
 
 <a href="https://pf12345.gitbooks.io/dingtalkweui-api/content/" target="_blank">Documents</a> -->
 
-### Docs
-
-- [actionsheet](docs/actionsheet.md)
-- [alert](docs/alert.md)
 
 ### 贡献
 
