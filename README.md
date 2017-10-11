@@ -45,8 +45,6 @@ Vue.use(dingtalkweui);
 
 或者 Vue.use(dingtalkweui, config); 
 
-
-
 ```
 
 ## 开发

@@ -7,6 +7,7 @@ import Loading from './../components/loading.vue'
 import Actionsheet from './../components/actionsheet.vue'
 import Modal from './../components/modal.vue'
 import PreviewImage from './../components/previewImage.vue'
+import DatePicker from './../components/datepicker.vue'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/previewImage',
       name: 'PreviewImage',
       component: PreviewImage
+    },
+    {
+      path: '/datepicker',
+      name: 'DatePicker',
+      component: DatePicker
     }
   ]
 })
