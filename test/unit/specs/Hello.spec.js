@@ -1,11 +1,8 @@
 import Vue from 'vue'
-import Hello from '@/components/Hello'
+import dingtalkweui from '../../../dist/dingtalkweui'
 
-describe('Hello.vue', () => {
-  it('should render correct contents', () => {
-    const Constructor = Vue.extend(Hello)
-    const vm = new Constructor().$mount()
-    expect(vm.$el.querySelector('.hello h1').textContent)
-      .to.equal('Welcome to Your Vue.js App')
+describe('dingtalkweui', () => {
+  it('should render correct install dingtalkweui', () => {
+    expect(!dingtalkweui).to.equal(false)
   })
 })
