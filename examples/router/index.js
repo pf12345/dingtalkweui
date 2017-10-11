@@ -8,6 +8,7 @@ import Actionsheet from './../components/actionsheet.vue'
 import Modal from './../components/modal.vue'
 import PreviewImage from './../components/previewImage.vue'
 import DatePicker from './../components/datepicker.vue'
+import DropDown from './../components/dropdown'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/datepicker',
       name: 'DatePicker',
       component: DatePicker
+    },
+    {
+      path: '/dropdown',
+      name: 'DropDown',
+      component: DropDown
     }
   ]
 })

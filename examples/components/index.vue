@@ -10,6 +10,7 @@
       <div class="weui-tab__content page_feedback" v-show="type === 'fq'" style="display: block"> 
         <a href="/#/alert" id="alertBtn" class="weui-btn weui-btn_default">Alert</a> 
         <a href="/#/confirm" id="confirmBtn" class="weui-btn weui-btn_default">Confirm</a> 
+        <a href="/#/dropdown" id="confirmBtn" class="weui-btn weui-btn_default">DropDown</a> 
         <!-- <a href="/#/alert" id="toastBtn" class="weui-btn weui-btn_default">Toast</a>  -->
         <a href="/#/loading" id="loadingBtn" class="weui-btn weui-btn_default">Loading</a> 
         <a href="/#/actionsheet" id="actionSheetBtn" class="weui-btn weui-btn_default">ActionSheet</a> 

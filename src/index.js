@@ -6,6 +6,7 @@ import Actionsheet from './components/actionsheet';
 import Modal from './components/modal';
 import PreviewImage from './components/previewImage';
 import DatePicker from './components/datepicker';
+import Dropdown from './components/dropdown';
 
 import {getPlatform} from './utils/dom';
 
@@ -34,6 +35,7 @@ const install = function (Vue, opts = {}) {
     Vue.prototype.$modal = Modal;
     Vue.prototype.$previewImage = PreviewImage;
     Vue.prototype.$datepicker = DatePicker;
+    Vue.prototype.$dropdown = Dropdown;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
