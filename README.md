@@ -8,6 +8,7 @@
 - [actionsheet](docs/actionsheet.md)
 - [alert](docs/alert.md)
 - [confirm](docs/confirm.md)
+- [datepicker](docs/datepicker.md)
 - [loading](docs/loading.md)
 - [preview image](docs/previewImage.md)
 
