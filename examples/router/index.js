@@ -10,6 +10,7 @@ import PreviewImage from './../components/previewImage.vue'
 import DatePicker from './../components/datepicker.vue'
 import DropDown from './../components/dropdown.vue'
 import Toast from './../components/toast.vue'
+import Mutipicker from './../components/mutipicker.vue'
 
 Vue.use(Router)
 
@@ -64,6 +65,11 @@ export default new Router({
       path: '/toast',
       name: 'Toast',
       component: Toast
+    },
+    {
+      path: '/mutipicker',
+      name: 'Mutipicker',
+      component: Mutipicker
     }
   ]
 })

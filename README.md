@@ -11,6 +11,7 @@
 - [datepicker](docs/datepicker.md)
 - [dropdown](docs/dropdown.md)
 - [loading](docs/loading.md)
+- [mutipicker](docs/mutipicker.md)
 - [preview image](docs/previewImage.md)
 - [toast](docs/toast.md)
 

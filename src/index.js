@@ -8,6 +8,7 @@ import PreviewImage from './components/previewImage';
 import DatePicker from './components/datepicker';
 import Dropdown from './components/dropdown';
 import Toast from './components/toast';
+import Mutipicker from './components/mutipicker';
 
 import {getPlatform} from './utils/dom';
 
@@ -38,6 +39,7 @@ const install = function (Vue, opts = {}) {
     Vue.prototype.$datepicker = DatePicker;
     Vue.prototype.$dropdown = Dropdown;
     Vue.prototype.$toast = Toast;
+    Vue.prototype.$mutipicker = Mutipicker;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {

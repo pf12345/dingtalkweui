@@ -19,7 +19,7 @@
         <!-- <a href="javascript:;" id="topTipsBtn" class="weui-btn weui-btn_default">TopTips</a>  -->
         <!-- <a href="javascript:;" id="pickerBtn" class="weui-btn weui-btn_default">Picker</a>  -->
         <a href="/#/datepicker" id="datePickerBtn" class="weui-btn weui-btn_default">DatePicker</a> 
-        <!-- <a href="javascript:;" id="multiPickerBtn" class="weui-btn weui-btn_default">Multi-Picker</a>  -->
+        <a href="/#/mutipicker" id="multiPickerBtn" class="weui-btn weui-btn_default">Multi-Picker</a> 
         <!-- <a href="javascript:;" id="cascadePickerBtn" class="weui-btn weui-btn_default">Cascade-Picker</a>  -->
       </div> 
       <div class="weui-tab__content" v-show="type === 'bd'" style="display: block"> 
