@@ -1,4 +1,4 @@
-<a name="actionSheet"></a>
+<a name="dropdown"></a>
 
 ## dropdown([options])
 dropdown

@@ -1,4 +1,4 @@
-<a name="actionSheet"></a>
+<a name="loading"></a>
 
 ## loading(content, function)
 loading

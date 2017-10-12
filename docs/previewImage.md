@@ -1,4 +1,4 @@
-<a name="actionSheet"></a>
+<a name="Preview Image"></a>
 
 ## Preview Image([options])
 Preview Image 图片预览

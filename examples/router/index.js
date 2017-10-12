@@ -8,7 +8,8 @@ import Actionsheet from './../components/actionsheet.vue'
 import Modal from './../components/modal.vue'
 import PreviewImage from './../components/previewImage.vue'
 import DatePicker from './../components/datepicker.vue'
-import DropDown from './../components/dropdown'
+import DropDown from './../components/dropdown.vue'
+import Toast from './../components/toast.vue'
 
 Vue.use(Router)
 
@@ -58,6 +59,11 @@ export default new Router({
       path: '/dropdown',
       name: 'DropDown',
       component: DropDown
+    },
+    {
+      path: '/toast',
+      name: 'Toast',
+      component: Toast
     }
   ]
 })

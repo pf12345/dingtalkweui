@@ -12,6 +12,7 @@
 - [dropdown](docs/dropdown.md)
 - [loading](docs/loading.md)
 - [preview image](docs/previewImage.md)
+- [toast](docs/toast.md)
 
 ## Install
 

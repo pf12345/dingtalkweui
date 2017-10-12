@@ -7,6 +7,7 @@ import Modal from './components/modal';
 import PreviewImage from './components/previewImage';
 import DatePicker from './components/datepicker';
 import Dropdown from './components/dropdown';
+import Toast from './components/toast';
 
 import {getPlatform} from './utils/dom';
 
@@ -36,6 +37,7 @@ const install = function (Vue, opts = {}) {
     Vue.prototype.$previewImage = PreviewImage;
     Vue.prototype.$datepicker = DatePicker;
     Vue.prototype.$dropdown = Dropdown;
+    Vue.prototype.$toast = Toast;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {

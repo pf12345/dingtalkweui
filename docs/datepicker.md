@@ -1,4 +1,4 @@
-<a name="actionSheet"></a>
+<a name="datepicker"></a>
 
 ## datepicker([options])
 datepicker

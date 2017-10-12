@@ -11,7 +11,7 @@
         <a href="/#/alert" id="alertBtn" class="weui-btn weui-btn_default">Alert</a> 
         <a href="/#/confirm" id="confirmBtn" class="weui-btn weui-btn_default">Confirm</a> 
         <a href="/#/dropdown" id="confirmBtn" class="weui-btn weui-btn_default">DropDown</a> 
-        <!-- <a href="/#/alert" id="toastBtn" class="weui-btn weui-btn_default">Toast</a>  -->
+        <a href="/#/toast" id="toastBtn" class="weui-btn weui-btn_default">Toast</a> 
         <a href="/#/loading" id="loadingBtn" class="weui-btn weui-btn_default">Loading</a> 
         <a href="/#/actionsheet" id="actionSheetBtn" class="weui-btn weui-btn_default">ActionSheet</a> 
         <a href="/#/modal" id="topTipsBtn" class="weui-btn weui-btn_default">Modal</a> 
@@ -184,5 +184,20 @@ export default {
     padding: 15px;
     overflow: auto;
     background-color: #FFF;
+}
+#tab {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.weui-tab__panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
 }
 </style>

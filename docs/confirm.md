@@ -1,4 +1,4 @@
-<a name="actionSheet"></a>
+<a name="confirm"></a>
 
 ## confirm([options])
 confirm 确认弹窗
