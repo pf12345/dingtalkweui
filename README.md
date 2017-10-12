@@ -8,6 +8,7 @@
 - [actionsheet](docs/actionsheet.md)
 - [alert](docs/alert.md)
 - [confirm](docs/confirm.md)
+- [cascade picker](docs/cascadepicker.md)
 - [datepicker](docs/datepicker.md)
 - [dropdown](docs/dropdown.md)
 - [loading](docs/loading.md)
