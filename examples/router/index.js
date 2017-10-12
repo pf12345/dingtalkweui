@@ -11,6 +11,7 @@ import DatePicker from './../components/datepicker.vue'
 import DropDown from './../components/dropdown.vue'
 import Toast from './../components/toast.vue'
 import Mutipicker from './../components/mutipicker.vue'
+import Cascadepicker from './../components/cascadepicker.vue'
 
 Vue.use(Router)
 
@@ -70,6 +71,11 @@ export default new Router({
       path: '/mutipicker',
       name: 'Mutipicker',
       component: Mutipicker
+    },
+    {
+      path: '/cascadepicker',
+      name: 'Cascadepicker',
+      component: Cascadepicker
     }
   ]
 })

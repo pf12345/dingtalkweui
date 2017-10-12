@@ -20,7 +20,7 @@
         <!-- <a href="javascript:;" id="pickerBtn" class="weui-btn weui-btn_default">Picker</a>  -->
         <a href="/#/datepicker" id="datePickerBtn" class="weui-btn weui-btn_default">DatePicker</a> 
         <a href="/#/mutipicker" id="multiPickerBtn" class="weui-btn weui-btn_default">Multi-Picker</a> 
-        <!-- <a href="javascript:;" id="cascadePickerBtn" class="weui-btn weui-btn_default">Cascade-Picker</a>  -->
+        <a href="/#/cascadepicker" id="cascadePickerBtn" class="weui-btn weui-btn_default">Cascade-Picker</a> 
       </div> 
       <div class="weui-tab__content" v-show="type === 'bd'" style="display: block"> 
         <div id="form"> <div class="weui-cells__title">性别</div> 

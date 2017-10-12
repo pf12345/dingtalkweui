@@ -9,6 +9,7 @@ import DatePicker from './components/datepicker';
 import Dropdown from './components/dropdown';
 import Toast from './components/toast';
 import Mutipicker from './components/mutipicker';
+import Cascadepicker from './components/cascadepicker';
 
 import {getPlatform} from './utils/dom';
 
@@ -40,6 +41,7 @@ const install = function (Vue, opts = {}) {
     Vue.prototype.$dropdown = Dropdown;
     Vue.prototype.$toast = Toast;
     Vue.prototype.$mutipicker = Mutipicker;
+    Vue.prototype.$cascadepicker = Cascadepicker;
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
