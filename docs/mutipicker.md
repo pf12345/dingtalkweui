@@ -25,7 +25,7 @@ mutipicker 两列下拉
 | [options] | <code>object</code> | 配置项 |
 | [options.defaultItems1] | <code>array</code> | 第一列选项列表 |
 | [options.defaultItems2] | <code>array</code> | 第二列选项列表 |
-| [options.defaultValue] | <code>array</code> | 默认展示选项值 |
+| [options.defaultValue] | <code>array</code> | 默认展示列表value选项值数组 |
 | [options.success] | <code>function</code> | 点击确定回调 |
 
 **Example**  
