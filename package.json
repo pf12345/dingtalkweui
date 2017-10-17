@@ -37,7 +37,6 @@
     "koa-jade": "1.1.0",
     "koa-logger": "~1.3.0",
     "koa-route": "^2.4.2",
-    "koa-router": "^7.2.1",
     "koa-static": "~1.4.9",
     "moment": "^2.19.0",
     "style-loader": "^0.18.2",

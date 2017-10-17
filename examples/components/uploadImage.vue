@@ -14,17 +14,19 @@ export default {
     }
   },
   created() {
-    this.$root.ajaxGet('/getConfig', {
-      url: window.location.href
-    }, (res) => {
-      if(res.result === 'TRUE') {
-        this.ddconfig = Object.assgin({
-          agentId: '131643752',
-          type: 0,
-          jsApiList: ['biz.util.uploadImage', 'runtime.info', 'biz.ding.post']
-        },res.data);
-      }
-    })
+    if(this.platform === 'dingtalk') {
+      this.$root.ajaxGet('/getConfig', {
+        url: window.location.href
+      }, (res) => {
+        if(res.result === 'TRUE') {
+          this.ddconfig = Object.assgin({
+            agentId: '131643752',
+            type: 0,
+            jsApiList: ['biz.util.uploadImage', 'runtime.info', 'biz.ding.post']
+          },res.data);
+        }
+      })
+    }
   }
 }
 </script>

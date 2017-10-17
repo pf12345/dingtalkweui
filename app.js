@@ -9,7 +9,6 @@ var route = require('koa-route');
 var logger = require('koa-logger');
 var serve = require('koa-static');
 var jade = require("koa-jade");
-var router = require('koa-router')();
 
 var cors = require('koa-cors');
 
@@ -108,13 +107,8 @@ app.use(route.get('/getConfig', function *(next) {
     
 }));
 
-app.use(route.post('/unploadFile', function *(next) {
-    console.log(this.request.body)
-}));
-
-app.use(router.routes());
-
 app.listen(3001);
+console.log('Server 1 Port 3001');
 
 
 function invoke(path, params) {
