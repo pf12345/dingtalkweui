@@ -10,11 +10,12 @@ import Dropdown from './components/dropdown';
 import Toast from './components/toast';
 import Mutipicker from './components/mutipicker';
 import Cascadepicker from './components/cascadepicker';
+import UploadImage from './components/uploadImage';
 
 import {getPlatform} from './utils/dom';
 
 const dingtalkweui = {
-	
+	UploadImage
 }
 
 

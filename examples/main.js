@@ -4,6 +4,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import dingtalkweui from '../src/index';
+import { ajaxGet } from './assets/js/ajax';
 
 Vue.use(dingtalkweui, {
 	platform: 'dingding'
@@ -16,5 +17,8 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  methods: {
+  	ajaxGet
+  }
 })
