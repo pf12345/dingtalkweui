@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 export default {
-	show({content = '操作成功', duration = 3000}) {
+	show({content = '操作成功', duration = 3000, isError = false}) {
 		if(Vue.prototype.platform === 'dingtalk' && window.dd) {
 			dd.ready(function() {
 				dd.device.notification.toast({
@@ -12,10 +12,18 @@ export default {
 				})
 			})
 		} else if(window.weui) {
-			weui.toast(content, {
-				duration: duration,
-				className: 'dingtalkweui-toast'
-			});
+			if(!isError) {
+				weui.toast(content, {
+					duration: duration,
+					className: 'dingtalkweui-toast'
+				});
+			} else {
+				weui.topTips(content, {
+					duration: duration,
+					className: 'dingtalkweui-toast'
+				});
+			}
+			
 		}
 	}
 };

@@ -24,6 +24,7 @@ toast 一般用于操作成功时的提示
 | --- | --- | --- |
 | [options] | <code>object</code> | 配置项 |
 | [options.content] | <code>string</code> | 弹窗的内容 |
+| [options.isError] | <code>boolean</code> | 非钉钉情况下，错误提示时，使用设为true |
 | [options.duration] | <code>number</code> | 多少毫秒后关闭toast |
 
 **Example**  
