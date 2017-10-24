@@ -11,11 +11,20 @@ import Toast from './components/toast';
 import Mutipicker from './components/mutipicker';
 import Cascadepicker from './components/cascadepicker';
 import UploadImage from './components/uploadImage';
+import slideWrap from './components/slideWrap';
+import input from './components/input';
+import button from './components/button';
+
+import radio from './components/radio'
 
 import {getPlatform} from './utils/dom';
 
 const dingtalkweui = {
-	UploadImage
+	UploadImage,
+    slideWrap,
+    dwRadio: radio,
+    dwInput: input,
+    dwButton: button
 }
 
 

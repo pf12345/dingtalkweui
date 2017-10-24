@@ -1,0 +1,47 @@
+.dw_alert_list > li {
+    color: #333;
+    padding: 0.5em;
+    position: relative;
+}
+.dw_plugin_list li {
+    display: flex;
+}
+.dw_alert_list > li:not(.dw_plugin_list_flg):not(:first-child) {
+    border-top: 1px solid #d9d9d9;
+}
+.dw_plugin_list_content {
+    height: 25px;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    padding-right: 90px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.select-people-transition li {
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.weui-icon-checked:before{
+  display:block;
+  content:'\EA08';
+  color:#09BB07;
+  font-size:16px;
+  margin-top: 3px;
+}
+.dw_plugin_btns {
+    padding: 5px .5em;
+    overflow: hidden;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-top: 1px solid #d9d9d9;
+}

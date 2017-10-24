@@ -12,6 +12,7 @@ export const ajaxGet = function(url, params, success, error_cb) {
 		}
 	})
 	.catch(function (error) {
+		alert(error)
 		if(error_cb && typeof error_cb === 'function') {
 			error_cb(error);
 		}
