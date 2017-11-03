@@ -43,7 +43,7 @@
             }
         },
         created() {
-            // alert(this.platform)
+            
         },
         methods: {
             choseImage() {

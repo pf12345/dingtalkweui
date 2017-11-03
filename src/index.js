@@ -15,18 +15,23 @@ import slideWrap from './components/slideWrap';
 import input from './components/input';
 import button from './components/button';
 
-import radio from './components/radio'
+import radio from './components/radio';
+import checkBox from './components/checkBox';
 
-import {getPlatform} from './utils/dom';
+import {getPlatform, resetKeyValue} from './utils/common';
 
 const dingtalkweui = {
 	UploadImage,
     slideWrap,
     dwRadio: radio,
     dwInput: input,
-    dwButton: button
+    dwButton: button,
+    dwCheckbox: checkBox
 }
 
+const utils = {
+    resetKeyValue
+}
 
 const install = function (Vue, opts = {}) {
 	Object.keys(opts).forEach((key) => {
@@ -41,6 +46,8 @@ const install = function (Vue, opts = {}) {
         Vue.component(key, dingtalkweui[key]);
     });
 
+    Vue.prototype.$utils = utils;
+    
     Vue.prototype.$alert = Alert;
     Vue.prototype.$confirm = Confirm;
     Vue.prototype.$loading = Loading;

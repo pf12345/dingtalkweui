@@ -11,3 +11,23 @@ export const getPlatform = function() {
 	}
 	return '';
 }
+
+export const resetKeyValue = function(arr) {
+	if(arr) {
+		let _arr = []
+		arr.forEach((_item) => {
+			if(typeof _item === 'string') {
+				let item = {
+					key: _item,
+					value: _item,
+					title: _item
+				}
+				_arr.push(item);
+			} else {
+				_arr.push(_item);
+			}
+		})
+		return _arr;
+	}
+	return arr;
+}

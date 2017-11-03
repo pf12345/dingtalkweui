@@ -1,26 +1,31 @@
 <template lang="html">
-    <div class="input-item">
-        <p class="input-title is-option">
-            {{title}}
-        </p>
-        <input :readonly="readonly" 
-                :type="type" class="input-input" 
-                :value="currentValue"
-                :placeholder="placeholder || (readonly ? '请选择' : '请输入')" 
-                @keyup.enter="handleEnter"
-                @keyup="handleKeyup"
-                @keypress="handleKeypress"
-                @keydown="handleKeydown"
-                @focus="handleFocus"
-                @blur="handleBlur"
-                @change="handleChange"
-                @click="handleClick">
+    <div class="weui-cell">
+        <div class="weui-cell__hd">
+            <label class="weui-label">{{title}}</label>
+        </div> 
+        <div class="weui-cell__bd">
+            <input :readonly="readonly" 
+            :type="type" 
+            :maxlength="maxlength" 
+            :placeholder="placeholder || (readonly ? '请选择' : '请输入')"  
+            emptytips="请输入" 
+            class="weui-input"
+            @keyup.enter="handleEnter"
+            @keyup="handleKeyup"
+            @keypress="handleKeypress"
+            @keydown="handleKeydown"
+            @focus="handleFocus"
+            @blur="handleBlur"
+            @change="handleChange"
+            @input="handleInput"
+            @click="handleClick">
+        </div>
     </div>
-</template>
+</template> 
 
 <script>
     export default {
-        name: 'uploadImage',
+        name: 'Input',
         props: {
             title: {
                 type: String,
@@ -38,13 +43,17 @@
             },
             type: {
                 validator (value) {
-                    return ['text', 'textarea', 'password', 'number', 'email'].indexOf(value) >= 0;
+                    return ['text', 'textarea', 'password', 'number', 'email', 'phone'].indexOf(value) >= 0;
                 },
                 default: 'text'
             },
             value: {
                 type: [String, Number],
                 default: ''
+            },
+            maxlength: {
+                type: Number,
+                default: 50
             }
         },
         data() {
@@ -80,6 +89,12 @@
             handleChange (event) {
                 this.$emit('on-input-change', event);
             },
+            handleInput (event) {
+                let value = event.target.value;
+                this.$emit('input', value);
+                this.setCurrentValue(value);
+                this.$emit('on-change', event);
+            },
             setCurrentValue (value) {
                 if (value === this.currentValue) return;
                 this.currentValue = value;
@@ -94,27 +109,5 @@
 </script>
 
 <style lang="css" scoped>
-.input-item {
-    margin-bottom: 12px;
-}
-.input-title {
-    margin-bottom: 8px;
-    color: #333;
-    font-size: 14px;
-    line-height: 1;
-}
-.input-input {
-    border: 1px solid #dadada;
-    border-radius: 4px;
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    box-shadow: none;
-    outline: none;
-    -webkit-appearance: none;
-}
-input {
-    height: 40px;
-    text-shadow: rgba(0,0,0,0) 0 0 0;
-}
+
 </style>

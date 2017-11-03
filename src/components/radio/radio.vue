@@ -1,26 +1,20 @@
 <template lang="html">
     <div>
-        <dw-input :title="title" :placeholder="placeholder" :readonly="readonly" :value="showValue" @on-click="choseDate"></dw-input>
-        <slide-wrap :show="showSlide" @back="showSlide=false">
-            <div style="overflow-y: auto; height: calc(100% - 55px);" class="listScroll"> 
-                <ul style="padding-top: 0;overflow: hidden;" class="dw_plugin_list dw_alert_list">   
-                    <li v-for="(_item,index) in datas" @click="selectRadio(index)"> 
-                        <span class="dw_plugin_list_content">{{_item.title}}</span> 
-                        <span class="weui-icon-checked" v-if="index === selected"></span>
-                    </li>
-                </ul> 
-            </div>
-            <div class="dw_plugin_btns"> 
-                <dw-button type="cancel" style="margin-right: 12px;" @click="cancel">取消</dw-button>
-                <dw-button type="confirm" @click="ok">确定</dw-button>
-            </div>
-        </slide-wrap>
+        <div class="weui-cells__title">{{title}}{{placeholder ? '(' + placeholder + ')' : ''}}</div> 
+        <div class="weui-cells weui-cells_radio"> 
+          <label class="weui-cell weui-check__label" :for="index" v-for="(_item,index) in _datas" @click.stop="selectRadio(index)"> 
+            <div class="weui-cell__bd">{{_item.title}}</div> 
+            <div class="weui-cell__ft"> 
+              <span :class="{'weui-icon-checked': index === selected}"></span> 
+            </div> 
+          </label>
+        </div> 
     </div>
 </template>
 
 <script>
     export default {
-        name: 'date',
+        name: 'radio',
         props: {
             onOk: {
                 type: Function,
@@ -35,7 +29,7 @@
             placeholder: {
                 type: String,
                 default() {
-                    return '请选择'
+                    return ''
                 }
             },
             datas: {
@@ -44,39 +38,30 @@
                     return [];
                 }
             },
-            selectedIndex: {
-                type: Number,
-                default() {
-                    return 0;
-                }
+            value: {
+                type: [String, Object]
             }
         },
         data() {
             return {
-               showValue: '',
-               showSlide: false,
-               readonly: true,
-               selected: 0
+               selected: '',
+               _datas: []
             }
         },
-        created() {
-            this.selected = this.selectedIndex;
+        mounted() {
+            this._datas.forEach((_item, _index) => {
+                if(_item.title === this.value) {
+                    this.selected = _index;
+                }
+            })
         },
-        components: {
+        created() {
+            this._datas = this.$utils.resetKeyValue(this.datas);
         },
         methods: {
-            choseDate() {
-                this.showSlide = true;
-            },
             selectRadio(index) {
                 this.selected = index;
-            },
-            cancel() {
-                this.showSlide = false;
-            },
-            ok() {
-                this.showSlide = false;
-                this.showValue = this.datas[this.selected].title;
+                this.$emit('input', this.datas[this.selected]);
                 this.onOk(this.datas[this.selected]);
             }
         }

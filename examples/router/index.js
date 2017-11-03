@@ -13,7 +13,6 @@ import Toast from './../components/toast.vue'
 import Mutipicker from './../components/mutipicker.vue'
 import Cascadepicker from './../components/cascadepicker.vue'
 import UploadImage from './../components/uploadImage.vue'
-import Radio from './../components/radio.vue'
 
 Vue.use(Router)
 
@@ -83,11 +82,6 @@ export default new Router({
       path: '/uploadImage',
       name: 'UploadImage',
       component: UploadImage
-    },
-    {
-      path: '/radio',
-      name: 'Radio',
-      component: Radio
     }
   ]
 })

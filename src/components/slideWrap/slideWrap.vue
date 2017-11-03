@@ -22,17 +22,14 @@
                 if (val) {
                     this.$nextTick(() => {
                         document.body.appendChild(this.$refs.slide);
-                        //----------
                         this.$refs.slide.addEventListener('transitionend', () => {
                             this.$emit('transitionend');
                         }, false);
                     });
-                    //----------
                     const slideLength = document.querySelectorAll('.dui-slide-wrap-transition').length;
                     if (slideLength > 1 && !this.zIndex) {
                         this.slide_style += `;z-index:${slideLength + 99};`;
                     }
-                    //----------
                     const _this = this;
                     const nowId = `dui_slide_${Date.now()}`;
                     this.isBack = false;
