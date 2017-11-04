@@ -1,3 +1,4 @@
+import dingtalk from 'dingtalk-javascript-sdk';
 
 export const getPlatform = function() {
 	if(window.navigator && window.navigator.userAgent) {
@@ -30,4 +31,22 @@ export const resetKeyValue = function(arr) {
 		return _arr;
 	}
 	return arr;
+}
+
+export const initDingtalk = function(cb) {
+	dingtalk.ready(function(){
+	  const dd = dingtalk.apis;
+	  if(cb && typeof cb === 'function') {
+	  	cb(dd);
+	  }
+	})
+	dingtalk.error(function(err){
+	  alert('dingtalk error: ' + JSON.stringify(err));
+	});
+}
+
+export const setDingtalkConfig = function(config) {
+	if(config && typeof config === 'object') {
+		dingtalk.config(config);
+	}
 }

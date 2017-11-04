@@ -20,7 +20,6 @@
         <a href="/#/previewImage" id="topTipsBtn" class="weui-btn weui-btn_default">Preview Image</a> 
         <a href="/#/toast" id="toastBtn" class="weui-btn weui-btn_default">Toast</a> 
         <a href="/#/uploadImage" id="uploadImageBtn" class="weui-btn weui-btn_default">Upload-Image</a> 
-        <a href="/#/radio" id="uploadImageBtn" class="weui-btn weui-btn_default">Upload-Image</a>
         <!-- <a href="javascript:;" id="topTipsBtn" class="weui-btn weui-btn_default">TopTips</a>  -->
         <!-- <a href="javascript:;" id="pickerBtn" class="weui-btn weui-btn_default">Picker</a>  -->
       </div> 

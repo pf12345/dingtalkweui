@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 export default {
 	show({defaultItems1 = [], defaultItems2 = [], defaultValue= [], success = function(){}}) {
-		weui.picker(defaultItems1, defaultItems2, {
+		Vue.prototype.$weui.picker(defaultItems1, defaultItems2, {
 			defaultValue: defaultValue,
 			onChange: function (result) {
 				console.log(result);

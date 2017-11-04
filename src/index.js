@@ -1,4 +1,6 @@
 import 'weui';
+import weui from './other/weui.js';
+
 import Alert from './components/alert';
 import Confirm from './components/confirm';
 import Loading from './components/loading';
@@ -18,7 +20,13 @@ import button from './components/button';
 import radio from './components/radio';
 import checkBox from './components/checkBox';
 
-import {getPlatform, resetKeyValue} from './utils/common';
+import { 
+    getPlatform, 
+    resetKeyValue, 
+    initDingtalk,
+    setDingtalkConfig
+} from './utils/common';
+
 
 const dingtalkweui = {
 	UploadImage,
@@ -30,7 +38,9 @@ const dingtalkweui = {
 }
 
 const utils = {
-    resetKeyValue
+    resetKeyValue,
+    initDingtalk,
+    setDingtalkConfig
 }
 
 const install = function (Vue, opts = {}) {
@@ -47,6 +57,7 @@ const install = function (Vue, opts = {}) {
     });
 
     Vue.prototype.$utils = utils;
+    Vue.prototype.$weui = weui;
     
     Vue.prototype.$alert = Alert;
     Vue.prototype.$confirm = Confirm;

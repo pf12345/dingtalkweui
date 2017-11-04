@@ -7,7 +7,10 @@ import dingtalkweui from '../src/index';
 import { ajaxGet } from './assets/js/ajax';
 
 Vue.use(dingtalkweui, {
-	platform: 'dingding'
+	platform: 'dingding',
+	ddconfig: {
+		a: 1
+	}
 });
 
 Vue.config.productionTip = false;

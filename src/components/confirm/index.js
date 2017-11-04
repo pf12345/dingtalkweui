@@ -11,14 +11,14 @@ const defaulButtons = [{
 }]
 export default {
 	show({content = '提示信息', title = '提示', buttons = defaulButtons}) {
-		if(Vue.prototype.platform === 'dingtalk' && window.dd) {
+		if(Vue.prototype.platform === 'dingtalk') {
 			let _buttons = [];
 			if(buttons && buttons.length) {
 				buttons.forEach((_b) => {
 					_buttons.push(_b.label);
 				})
 			}
-			dd.ready(function() {
+			Vue.prototype.$utils.initDingtalk((dd) => {
 				dd.device.notification.confirm({
 				    message: content,
 				    title: title,
@@ -34,8 +34,8 @@ export default {
 				    onFail : function(err) {}
 				});
 			})
-		} else if(window.weui) {
-			return weui.confirm(content, {
+		} else if(Vue.prototype.$weui) {
+			return Vue.prototype.$weui.confirm(content, {
 			    title: title,
 			    buttons: defaulButtons
 			});

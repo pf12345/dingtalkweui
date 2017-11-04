@@ -48,30 +48,22 @@
         methods: {
             choseImage() {
                 let _this = this;
-                if (this.platform === 'dingtalk' && window.dd) {
+                if (this.platform === 'dingtalk') {
                     if (this.ddconfig) {
-                        alert(JSON.stringify(this.ddconfig))
-                        dd.config(this.ddconfig);
-                        dd.ready(function () {
-                            try {
-                                dd.biz.util.uploadImage({
-                                    compression: true, //(是否压缩，默认为true)
-                                    onSuccess: function (result) {
-                                        let _files = [];
-                                        if (result && result.length) {
-                                            _this.onSuccess(result)
-                                        }
-                                    },
-                                    onFail: function (err) {
-                                        this.$ddUtils.showToast('访问相机出错');
+                        this.$utils.setDingtalkConfig(this.ddconfig);
+                        this.$utils.initDingtalk((dd) => {
+                            dd.biz.util.uploadImage({
+                                compression: true, //(是否压缩，默认为true)
+                                onSuccess: function (result) {
+                                    let _files = [];
+                                    if (result && result.length) {
+                                        _this.onSuccess(result)
                                     }
-                                });
-                            } catch (e) {
-                                alert(JSON.stringify(e))
-                            }
-                        })
-                        dd.error(function (err) {
-                            alert(JSON.stringify(err))
+                                },
+                                onFail: function (err) {
+                                    this.$ddUtils.showToast('访问相机出错');
+                                }
+                            });
                         })
                     } else {
                         this.$toast.show({

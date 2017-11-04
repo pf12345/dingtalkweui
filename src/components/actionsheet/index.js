@@ -22,14 +22,14 @@ import Vue from 'vue';
 */
 export default {
 	show({title = '提示', cancelButton = '取消', options = [], cancelClick = function(){}}) {
-		if(Vue.prototype.platform === 'dingtalk' && window.dd) {
+		if(Vue.prototype.platform === 'dingtalk') {
 			let _otherButtons = [];
 			if(options && options.length) {
 				options.forEach(function(_op) {
 					_otherButtons.push(_op.label);
 				})
 			}
-			dd.ready(function() {
+			Vue.prototype.$utils.initDingtalk((dd) => {
 				dd.device.notification.actionSheet({
 				    title: title, //标题
 				    cancelButton: cancelButton, //取消按钮文本
@@ -43,8 +43,8 @@ export default {
 				    onFail : function(err) {}
 				})
 			})
-		} else if(window.weui) {
-			weui.actionSheet(options, [
+		} else if(Vue.prototype.$weui) {
+			Vue.prototype.$weui.actionSheet(options, [
 			    {
 			        label: cancelButton,
 			        onClick: function () {

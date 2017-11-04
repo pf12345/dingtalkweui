@@ -14,14 +14,14 @@ let $modal = null;
 
 export default {
 	show({content = '提示信息', title = '提示', image = '', buttons = defaultButtons, hideSuccess = function() {}}) {
-		if(Vue.prototype.platform === 'dingtalk' && window.dd) {
-			dd.ready(function() {
-				let _buttons = [];
-				if(buttons && buttons.length) {
-					buttons.forEach((_b) => {
-						_buttons.push(_b.label);
-					})
-				}
+		if(Vue.prototype.platform === 'dingtalk') {
+			let _buttons = [];
+			if(buttons && buttons.length) {
+				buttons.forEach((_b) => {
+					_buttons.push(_b.label);
+				})
+			}
+			Vue.prototype.$utils.initDingtalk((dd) => {
 				dd.device.notification.modal({
 				    image: image, // 标题图片地址
 				    title: title, //标题
@@ -36,8 +36,8 @@ export default {
 				    onFail : function(err) {}
 				})
 			})
-		} else if(window.weui) {
-			$modal = weui.dialog({
+		} else if(Vue.prototype.$weui) {
+			$modal = Vue.prototype.$weui.dialog({
 			    title: title,
 			    content: content,
 			    className: 'custom-classname',

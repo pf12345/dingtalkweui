@@ -4,8 +4,8 @@ var gallery = null;
 export default {
 	show({url = '', success = function() {}, deleteSuccess = function() {}}) {
 		let _this = this;
-		if(Vue.prototype.platform === 'dingtalk' && window.dd) {
-			dd.ready(function() {
+		if(Vue.prototype.platform === 'dingtalk') {
+			Vue.prototype.$utils.initDingtalk((dd) => {
 				dd.biz.util.previewImage({
 				    urls: [url],//图片地址列表
 				    current: url,//当前显示的图片链接
@@ -17,8 +17,8 @@ export default {
 				    onFail : function(err) {}
 				})
 			})
-		} else if(window.weui) {
-			gallery = weui.gallery(url, {
+		} else if(Vue.prototype.$weui) {
+			gallery = Vue.prototype.$weui.gallery(url, {
 			    className: 'custom-classname',
 			    onDelete: function(){
 			        if(deleteSuccess && typeof deleteSuccess === 'function') {

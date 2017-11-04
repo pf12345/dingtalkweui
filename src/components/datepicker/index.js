@@ -4,8 +4,8 @@ import { getDate, transDateToArr, getYear } from './../../utils/date'
 export default {
 	show({ defaultValue = getDate(), success = function() {}}) {
 		defaultValue = defaultValue ? defaultValue : getDate();
-		if(Vue.prototype.platform === 'dingtalk' && window.dd) {
-			dd.ready(function() {
+		if(Vue.prototype.platform === 'dingtalk') {
+			Vue.prototype.$utils.initDingtalk((dd) => {
 				dd.biz.util.datepicker({
 				    format: 'yyyy-MM-dd',
 				    value: defaultValue, //默认显示日期
@@ -17,8 +17,8 @@ export default {
 				    onFail : function(err) {}
 				})
 			})
-		} else if(window.weui) {
-			weui.datePicker({
+		} else if(Vue.prototype.$weui) {
+			Vue.prototype.$weui.datePicker({
 			     start: getYear(defaultValue), 
 			     end: 2030,
 			     defaultValue: transDateToArr('YYYY-M-D', defaultValue),

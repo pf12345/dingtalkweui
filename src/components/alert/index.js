@@ -2,8 +2,8 @@ import Vue from 'vue';
 
 export default {
 	show({content = '提示信息', title = '提示', button = '确定', success = function() {}}) {
-		if(Vue.prototype.platform === 'dingtalk' && window.dd) {
-			dd.ready(function() {
+		if(Vue.prototype.platform === 'dingtalk') {
+			Vue.prototype.$utils.initDingtalk((dd) => {
 				dd.device.notification.alert({
 					message: content,
 				    title: title,//可传空
@@ -18,8 +18,8 @@ export default {
 				    }
 				});
 			})
-		} else if(window.weui) {
-			return weui.alert(content, {
+		} else if(Vue.prototype.$weui) {
+			return Vue.prototype.$weui.alert(content, {
 				title: title,
 				buttons: [{
 					label: button,

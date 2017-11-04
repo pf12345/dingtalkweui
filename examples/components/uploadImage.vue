@@ -16,7 +16,6 @@ export default {
   },
   created() {
     if(this.platform === 'dingtalk') {
-      alert(1)
       this.$root.ajaxGet('/getConfig', {
         url: window.location.href
       }, (res) => {

@@ -11,8 +11,8 @@ let DefaultItems = [{
 export default {
 	show({ defaultItems = DefaultItems, defaultValue = '', success = function() {}}) {
 		defaultValue = defaultValue ? defaultValue : (defaultItems[0] ? defaultItems[0].key : '');
-		if(Vue.prototype.platform === 'dingtalk' && window.dd) {
-			dd.ready(function() {
+		if(Vue.prototype.platform === 'dingtalk') {
+			Vue.prototype.$utils.initDingtalk((dd) => {
 				dd.biz.util.chosen({
 					source: defaultItems,
 				   selectedKey: defaultValue, // 默认选中的key
@@ -24,7 +24,8 @@ export default {
 				   onFail : function(err) {}
 				})
 			})
-		} else if(window.weui) {
+			
+		} else if(Vue.prototype.$weui) {
 			let _defaultItems = [], _defaultValue = '';
 			defaultItems.forEach((_item) => {
 				_defaultItems.push(Object.assign({label: _item.key}, _item));
@@ -32,7 +33,7 @@ export default {
 					_defaultValue = _item.value;
 				}
 			})
-			weui.picker(_defaultItems, {
+			Vue.prototype.$weui.picker(_defaultItems, {
 				className: 'dingtalkweui-dropdown',
 				container: 'body',
 				defaultValue: [_defaultValue],
