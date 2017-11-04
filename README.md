@@ -25,17 +25,6 @@ npm install dingtalkweui --save
 ```
 
 
-add script tag
-
-```
-// 在钉钉中使用时，添加钉钉sdk
-<script src="http://g.alicdn.com/dingding/open-develop/1.6.9/dingtalk.js"></script>
-
-// 在微信或者其他手机页面中使用时，添加weui
-<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.2/weui.min.js"></script>
-
-```
-
 use in project
 
 ```
