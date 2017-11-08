@@ -2,6 +2,23 @@
 
 > 钉钉平台、微信平台及普通手机访问平台开发的vue组件库, 能够更快、更方便的调用钉钉sdk、微信sdk及进行普通手机页面开发；
 
+## examples
+
+<table border="0">
+    <tr>
+        <td>
+            <img alt="反馈" src="./docs/images/index_fankui.png" width="220" />
+        </td>
+        <td>
+            <img alt="表单" src="./docs/images/index_form.png" width="220" />
+        </td>
+        <td>
+            <img alt="其他" src="./docs/images/index_other.png" width="220" />
+        </td>
+    </tr>
+</table>
+
+
 
 ## Docs
 
