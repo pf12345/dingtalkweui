@@ -8,11 +8,11 @@ Button 按钮
 <table border="0">
     <tr>
         <td>
-            <img alt="Long button" src="./images/button_long.png" width="200" />
+            <img alt="Long button" src="./images/button_long.png" width="300" />
             <p>Long button</p>
         </td>
         <td>
-            <img alt="Mini button" src="./images/button_mini.png" width=200 />
+            <img alt="Mini button" src="./images/button_mini.png" width=300 />
             <p>Mini button</p>
         </td>
     </tr>

@@ -7,6 +7,7 @@
 
 - [actionsheet](docs/actionsheet.md)
 - [alert](docs/alert.md)
+- [Button](docs/button.md)
 - [confirm](docs/confirm.md)
 - [cascade picker](docs/cascadepicker.md)
 - [datepicker](docs/datepicker.md)
