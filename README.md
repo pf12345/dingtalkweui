@@ -10,7 +10,7 @@
             <img alt="反馈" src="./docs/images/index_fankui.png" width="220" />
         </td>
         <td>
-            <img alt="表单" src="./docs/images/index_form.png" width="220" />
+            <img alt="表单" src="./docs/images/index_form.png?v=112" width="220" />
         </td>
         <td>
             <img alt="其他" src="./docs/images/index_other.png" width="220" />
