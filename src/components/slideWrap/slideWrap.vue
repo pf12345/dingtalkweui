@@ -1,23 +1,30 @@
 <template>
     <transition name="translate-in">
-        <aside class="slide-wrap" :style="slide_style" v-if="show" ref="slide">
+        <aside class="slide-wrap" :style="_slide_style" v-if="show" ref="slide">
             <slot></slot>
         </aside>
     </transition>
 </template>
 <script>
     export default{
-        ready(){
-            this.zIndex && (this.slide_style += `;z-index:${this.zIndex};`);
+        mounted(){
+            this.zIndex && (this._slide_style += `${this.slide_style};z-index:${this.zIndex};`);
+            this.show = this.value;
         },
         data(){
             return {
-                isBack: false
+                isBack: false,
+                _slide_style: '',
+                show: false
             }
         },
         directives: {
+            
         },
         watch: {
+            value(val) {
+                this.show = val;
+            },
             show(val){
                 if (val) {
                     this.$nextTick(() => {
@@ -26,23 +33,23 @@
                             this.$emit('transitionend');
                         }, false);
                     });
-                    const slideLength = document.querySelectorAll('.dui-slide-wrap-transition').length;
+                    const slideLength = document.querySelectorAll('.slide-wrap').length;
                     if (slideLength > 1 && !this.zIndex) {
-                        this.slide_style += `;z-index:${slideLength + 99};`;
+                        this._slide_style += `;z-index:${slideLength + 99};`;
                     }
                     const _this = this;
-                    const nowId = `dui_slide_${Date.now()}`;
+                    const nowId = `dw_slide_${Date.now()}`;
                     this.isBack = false;
                     history.replaceState({nowId}, '', '');
                     history.pushState(null, '', '');
                     window.addEventListener('popstate', function backFun(event) {
                         if (!event || !event.state || !event.state.nowId) {
-                            console.log(event);
                             return;
                         }
                         if (event.state.nowId === nowId) {
                             _this.isBack = true;
                             window.removeEventListener('popstate', backFun);
+                            _this.$emit('input',false);
                             _this.$emit('back');
                             if (typeof _this.callBack === 'function') {
                                 _this.callBack();
@@ -57,10 +64,9 @@
             }
         },
         props: {
-            show: {
+            value: {
                 type: Boolean,
-                default: false,
-                required: true
+                default: false
             },
             callBack: {
                 type: Function,
@@ -73,6 +79,7 @@
                 type: null,
                 default: ''
             }
+
         }
     }
 </script>

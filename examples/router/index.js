@@ -14,6 +14,9 @@ import Mutipicker from './../components/mutipicker.vue'
 import Cascadepicker from './../components/cascadepicker.vue'
 import UploadImage from './../components/uploadImage.vue'
 
+import Buttons from './../components/buttons.vue';
+import Input from './../components/input.vue';
+
 Vue.use(Router)
 
 export default new Router({
@@ -82,6 +85,16 @@ export default new Router({
       path: '/uploadImage',
       name: 'UploadImage',
       component: UploadImage
+    },
+    {
+      path: '/buttons',
+      name: 'Buttons',
+      component: Buttons
+    },
+    {
+      path: '/input',
+      name: 'Input',
+      component: Input
     }
   ]
 })

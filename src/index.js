@@ -15,10 +15,15 @@ import Cascadepicker from './components/cascadepicker';
 import UploadImage from './components/uploadImage';
 import slideWrap from './components/slideWrap';
 import input from './components/input';
+import textarea from './components/textarea';
 import button from './components/button';
 
 import radio from './components/radio';
 import checkBox from './components/checkBox';
+import link from './components/link';
+import form from './components/form';
+import searchBar from './components/searchBar';
+import tabbar from './components/tabbar';
 
 import { 
     getPlatform, 
@@ -34,7 +39,12 @@ const dingtalkweui = {
     dwRadio: radio,
     dwInput: input,
     dwButton: button,
-    dwCheckbox: checkBox
+    dwCheckbox: checkBox,
+    dwLink: link,
+    dwForm: form,
+    dwTextarea: textarea,
+    searchBar,
+    tabbar
 }
 
 const utils = {

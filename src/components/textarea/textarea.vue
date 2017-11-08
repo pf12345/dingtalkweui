@@ -1,25 +1,29 @@
 <template lang="html">
-    <div class="weui-cell">
-        <div class="weui-cell__hd">
-            <label class="weui-label">{{title}}</label>
-        </div> 
-        <div class="weui-cell__bd">
-            <input :readonly="readonly" 
-            :type="type" 
-            :maxlength="maxlength" 
-            :placeholder="placeholder || (readonly ? '请选择' : '请输入')"  
-            :value="currentValue"
-            emptytips="请输入" 
-            class="weui-input"
-            @keyup.enter="handleEnter"
-            @keyup="handleKeyup"
-            @keypress="handleKeypress"
-            @keydown="handleKeydown"
-            @focus="handleFocus"
-            @blur="handleBlur"
-            @change="handleChange"
-            @input="handleInput"
-            @click="handleClick">
+    <div>
+        <div class="weui-cells__title">{{title}}</div> 
+        <div class="weui-cells weui-cells_form">
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <textarea 
+                    class="weui-textarea" 
+                    :readonly="readonly" 
+                    :maxlength="maxlength" 
+                    :placeholder="placeholder || (readonly ? '请选择' : '请输入')"  
+                    rows="3"
+                    emptytips="请输入" 
+                    :value="currentValue"
+                    @keyup.enter="handleEnter"
+                    @keyup="handleKeyup"
+                    @keypress="handleKeypress"
+                    @keydown="handleKeydown"
+                    @focus="handleFocus"
+                    @blur="handleBlur"
+                    @change="handleChange"
+                    @input="handleInput"
+                    @click="handleClick"></textarea>
+                    <div class="weui-textarea-counter"><span>{{currentLength}}</span>/{{maxlength}}</div>
+                </div>
+            </div>
         </div>
     </div>
 </template> 
@@ -42,29 +46,25 @@
                 type: Boolean,
                 default: false
             },
-            type: {
-                validator (value) {
-                    return ['text', 'textarea', 'password', 'number', 'email', 'phone'].indexOf(value) >= 0;
-                },
-                default: 'text'
-            },
             value: {
                 type: [String, Number],
                 default: ''
             },
             maxlength: {
                 type: Number,
-                default: 50
+                default: 200
             }
         },
         data() {
             return {
-                currentValue: ''
+                currentValue: '',
+                currentLength: 0
             }
         },
         mounted() {
             if(this.value) {
                 this.currentValue = this.value;
+                this.currentLength = this.value.length;
             }
         },
         methods: {
@@ -101,6 +101,7 @@
             setCurrentValue (value) {
                 if (value === this.currentValue) return;
                 this.currentValue = value;
+                this.currentLength = value.length;
             }
         },
         watch: {

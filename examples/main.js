@@ -8,9 +8,7 @@ import { ajaxGet } from './assets/js/ajax';
 
 Vue.use(dingtalkweui, {
 	platform: 'dingding',
-	ddconfig: {
-		a: 1
-	}
+	ddconfig: {}
 });
 
 Vue.config.productionTip = false;
