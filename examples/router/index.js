@@ -16,6 +16,7 @@ import UploadImage from './../components/uploadImage.vue'
 
 import Buttons from './../components/buttons.vue';
 import Input from './../components/input.vue';
+import Radio from './../components/radio.vue';
 
 Vue.use(Router)
 
@@ -95,6 +96,11 @@ export default new Router({
       path: '/input',
       name: 'Input',
       component: Input
+    },
+    {
+      path: '/radio',
+      name: 'Radio',
+      component: Radio
     }
   ]
 })

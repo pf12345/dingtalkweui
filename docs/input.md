@@ -1,7 +1,7 @@
 <a name="Input"></a>
 
-## Input
-Input 输入框
+## Input、Textarea
+Input、Textarea 输入框
 
 **Example Image** 
 
@@ -14,7 +14,7 @@ Input 输入框
 </table>
 
 
-**Input props**
+**Input、Textarea props**
 
 <table border="0" style="font-size: 14px;">
     <tr>
@@ -61,7 +61,7 @@ Input 输入框
     </tr>
 </table>
 
-**Input Events**
+**Input、Textarea Events**
 
 <table border="0" style="font-size: 14px;">
     <tr>
@@ -123,14 +123,15 @@ Input 输入框
 
           <dw-input title="验证码" placeholder="请输入验证码"></dw-input>
 
-          <dw-textarea title="文本域" placeholder="说明"></dw-textarea>
+          <dw-textarea title="文本域" v-model="textarea" placeholder="说明"></dw-textarea>
       </dw-form>
   </div>
 </template>
 
 <script>
 export default {
-    phone: ''
+    phone: '',
+    textarea: ''
 }
 </script>
 
