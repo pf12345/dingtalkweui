@@ -35,7 +35,7 @@
             placeholder: {
                 type: String,
                 default() {
-                    return '请选择'
+                    return ''
                 }
             },
             readonly: {
@@ -44,7 +44,7 @@
             },
             type: {
                 validator (value) {
-                    return ['text', 'textarea', 'password', 'number', 'email', 'phone'].indexOf(value) >= 0;
+                    return ['text', 'password', 'number', 'email', 'phone'].indexOf(value) >= 0;
                 },
                 default: 'text'
             },

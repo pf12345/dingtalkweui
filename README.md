@@ -31,6 +31,7 @@
 - [dropdown](docs/dropdown.md)
 - [loading](docs/loading.md)
 - [mutipicker](docs/mutipicker.md)
+- [Input](docs/input.md)
 - [preview image](docs/previewImage.md)
 - [toast](docs/toast.md)
 
