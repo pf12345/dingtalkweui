@@ -26300,7 +26300,7 @@ exports.default = {
         placeholder: {
             type: String,
             default: function _default() {
-                return '请选择';
+                return '';
             }
         },
         readonly: {
@@ -26309,7 +26309,7 @@ exports.default = {
         },
         type: {
             validator: function validator(value) {
-                return ['text', 'textarea', 'password', 'number', 'email', 'phone'].indexOf(value) >= 0;
+                return ['text', 'password', 'number', 'email', 'phone'].indexOf(value) >= 0;
             },
 
             default: 'text'
