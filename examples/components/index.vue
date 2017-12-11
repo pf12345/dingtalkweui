@@ -52,6 +52,8 @@
             <dw-link target="_current" href="/#/buttons">按钮(Buttom)</dw-link>
             <dw-link target="_current" href="/#/input">输入框(Input)</dw-link>
             <dw-link target="_current" href="/#/radio">单选(Radio)</dw-link>
+            <dw-link target="_current" href="/#/swiper">图片轮播(Swiper)</dw-link>
+            <dw-link target="_current" href="/#/cardView">卡片视图(cardView)</dw-link>
           </dw-form> 
           <tabbar :tabs="tabs" :on-chose="tabsChose"></tabbar>
       </div> 

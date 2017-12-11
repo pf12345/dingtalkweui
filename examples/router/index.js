@@ -17,6 +17,8 @@ import UploadImage from './../components/uploadImage.vue'
 import Buttons from './../components/buttons.vue';
 import Input from './../components/input.vue';
 import Radio from './../components/radio.vue';
+import Swiper from './../components/swiper.vue';
+import cardView from './../components/cardView.vue';
 
 Vue.use(Router)
 
@@ -101,6 +103,16 @@ export default new Router({
       path: '/radio',
       name: 'Radio',
       component: Radio
+    },
+    {
+      path: '/swiper',
+      name: 'Swiper',
+      component: Swiper
+    },
+    {
+      path: '/cardView',
+      name: 'cardView',
+      component: cardView
     }
   ]
 })

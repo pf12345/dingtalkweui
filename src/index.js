@@ -24,6 +24,8 @@ import link from './components/link';
 import form from './components/form';
 import searchBar from './components/searchBar';
 import tabbar from './components/tabbar';
+import Swiper from './components/swiper';
+import cardView from './components/cardview';
 
 import { 
     getPlatform, 
@@ -44,7 +46,9 @@ const dingtalkweui = {
     dwForm: form,
     dwTextarea: textarea,
     searchBar,
-    tabbar
+    tabbar,
+    Swiper,
+    cardView
 }
 
 const utils = {
