@@ -1,73 +1,31 @@
-/**
- * Created on 8/10/15.
- */
-
+var express = require('express');
+var path = require('path');
+var http = require('http');
+var app = express();
 var co = require('co');
-const Koa = require('koa');
-const app = new Koa();
-var route = require('koa-route');
-var logger = require('koa-logger');
-var serve = require('koa-static');
-var jade = require("koa-jade");
-
-var cors = require('koa-cors');
-
+var crypto = require('crypto');
+var yields = require('express-yields');
 var https = require("https");
 var querystring = require('querystring');
 var url = require('url');
-var crypto = require('crypto');
+
+var OAPI_HOST = 'https://oapi.dingtalk.com';
+var corpId = require('./env').corpId;
+var secret = require('./env').secret;
 
 
-const OAPI_HOST = 'https://oapi.dingtalk.com';
-const corpId = require('./env').corpId;
-const secret = require('./env').secret;
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
-app.use(cors());
+app.get('/', function *(req, res) {
+	res.render('./index.jade', {});
+});
 
-app.use(logger());
 
-app.use(serve('public'));
-
-app.use(jade.middleware({
-    viewPath: __dirname + '/views',
-}));
-
-app.use(route.get('/', function *(next) {
-    var nonceStr = 'abcdefg';
+app.get('/getConfig', function *(req, res) {
+	var nonceStr = 'abcdefg';
     var timeStamp = new Date().getTime();
-    var signedUrl = decodeURIComponent(this.href);
-
-    function g() {
-        return co(function *() {
-            var accessToken = (yield invoke('/gettoken', {corpid: corpId, corpsecret: secret}))['access_token'];
-            var ticket = (yield invoke('/get_jsapi_ticket', {type: 'jsapi', access_token: accessToken}))['ticket'];
-            var signature = sign({
-                nonceStr: nonceStr,
-                timeStamp: timeStamp,
-                url: signedUrl,
-                ticket: ticket
-            });
-            return {
-                signature: signature,
-                nonceStr: nonceStr,
-                timeStamp: timeStamp,
-                corpId: corpId
-            };
-        }).catch(function(err) {
-            console.log(err);
-        });
-    }
-
-    this.render('index', {
-        title: 'Here we go...',
-        config: JSON.stringify(yield g()),
-    }, true);
-}));
-
-app.use(route.get('/getConfig', function *(next) {
-    var nonceStr = 'abcdefg';
-    var timeStamp = new Date().getTime();
-    var signedUrl = decodeURIComponent(this.query.url || this.href);
+    var signedUrl = decodeURIComponent(req.query.url || req.href);
 
     function g() {
         return co(function *() {
@@ -87,28 +45,36 @@ app.use(route.get('/getConfig', function *(next) {
                 url: signedUrl
             };
         }).catch(function(err) {
-            this.body = {
+            res.send({
                 result: 'FALSE',
                 data: JSON.stringify(err)
-            };
+            });
         });
     }
     try {
-        this.body = {
+        res.send({
             result: 'TRUE',
             data: yield g()
-        };
+        });
     }catch(e){
-        this.body = {
+        res.send({
             result: 'FALSE',
             data: JSON.stringify(e)
-        };
+        });
     }
-    
-}));
+})
 
-app.listen(8080);
-console.log('Server 1 Port 8080');
+app.use(express.static(path.join(__dirname, 'public')));
+
+var port = process.env.PORT || 8030;
+app.set('port', port);
+
+
+var server = http.createServer(app);
+
+server.listen(port);
+console.log('Server 1 Port 8030');
+
 
 
 function invoke(path, params) {

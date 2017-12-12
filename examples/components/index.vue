@@ -76,21 +76,21 @@ export default {
       checkboxValue: [],
       tabs: [{
         title: '微信',
-        icon: 'https://weui.io/images/icon_tabbar.png',
+        icon: '/images/icon_tabbar.png',
         badge: 5
       },{
         title: '通讯录',
-        icon: 'https://weui.io/images/icon_tabbar.png'
+        icon: '/images/icon_tabbar.png'
       },{
         title: '发现',
-        icon: 'https://weui.io/images/icon_tabbar.png',
+        icon: '/images/icon_tabbar.png',
         dot: true
       },{
         title: '我',
-        icon: 'https://weui.io/images/icon_tabbar.png'
+        icon: '/images/icon_tabbar.png'
       },{
         title: '其他',
-        icon: 'https://weui.io/images/icon_tabbar.png'
+        icon: '/images/icon_tabbar.png'
       }]
     }
   },
