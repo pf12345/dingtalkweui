@@ -9,6 +9,7 @@
 
 
 <img alt="demo qcode" src="./docs/dingtalkweuiqcode.png" />
+<p>扫码二维码，查看相关demo</p>
 
 
 ## examples
