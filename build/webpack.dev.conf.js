@@ -38,6 +38,11 @@ module.exports = merge(webpackBaseConfig, {
             filename: path.join(__dirname, '../examples/dist/index.html'),
             template: path.join(__dirname, '../examples/index.html')
         }),
-        new FriendlyErrorsPlugin()
+        new FriendlyErrorsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
     ]
 });
