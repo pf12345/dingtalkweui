@@ -1,5 +1,5 @@
 /**
- * Created by liqiao on 8/10/15.
+ * Created on 8/10/15.
  */
 
 var co = require('co');
@@ -107,8 +107,8 @@ app.use(route.get('/getConfig', function *(next) {
     
 }));
 
-app.listen(3001);
-console.log('Server 1 Port 3001');
+app.listen(8080);
+console.log('Server 1 Port 8080');
 
 
 function invoke(path, params) {

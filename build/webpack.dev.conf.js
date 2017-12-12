@@ -19,7 +19,7 @@ module.exports = merge(webpackBaseConfig, {
     },
     // 输出
     output: {
-        path: path.join(__dirname, '../examples/dist'),
+        path: path.join(__dirname, '../public/dist'),
         publicPath: '',
         filename: '[name].js',
         chunkFilename: '[name].chunk.js'

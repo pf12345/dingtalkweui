@@ -22,6 +22,7 @@
   },
   "scripts": {
     "dev": "node build/dev-server.js",
+    "build:dev": "webpack --config build/webpack.dev.conf.js",
     "dist:style": "gulp --gulpfile build/style.js",
     "dist:dev": "webpack --config build/webpack.dist.dev.conf.js",
     "dist:prod": "webpack --config build/webpack.dist.prod.conf.js",
