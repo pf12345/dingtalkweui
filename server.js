@@ -66,14 +66,14 @@ app.get('/getConfig', function *(req, res) {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-var port = process.env.PORT || 8030;
+var port = process.env.PORT || 8080;
 app.set('port', port);
 
 
 var server = http.createServer(app);
 
 server.listen(port);
-console.log('Server 1 Port 8030');
+console.log('Server 1 Port 8080');
 
 
 
