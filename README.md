@@ -5,7 +5,7 @@
 
 ## Demo
 
-[demo link](http://fontend.club:8080/)
+[demo link](http://dingtalkweui.fontend.club/)
 
 
 <img alt="demo qcode" src="./docs/dingtalkweuiqcode.png" />
