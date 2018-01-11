@@ -3,7 +3,7 @@
 > 钉钉平台、微信平台及普通手机访问平台开发的vue组件库, 能够更快、更方便的调用钉钉sdk、微信sdk及进行普通手机页面开发；
 
 
-## Demo
+<!-- ## Demo -->
 
 <!-- [demo link](http://dingtalkweui.fontend.club/)
 
